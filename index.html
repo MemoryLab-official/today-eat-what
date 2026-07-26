@@ -695,10 +695,15 @@
   };
 
   const baseFoods = [
-    {name:'火锅',icon:'hotpot'},{name:'寿司',icon:'sushi'},
-    {name:'炸鸡',icon:'chicken'},{name:'拉面',icon:'noodle'},
-    {name:'披萨',icon:'pizza'},{name:'汉堡',icon:'burger'},
-    {name:'麻辣烫',icon:'malatang'},{name:'奶茶',icon:'milktea'}
+    {name:'西乡步行街河粉',icon:'noodle'},
+    {name:'凉菜',icon:'generic'},
+    {name:'重庆麻辣烫',icon:'malatang'},
+    {name:'肠粉蒸米粉',icon:'generic'},
+    {name:'陕西面馆',icon:'noodle'},
+    {name:'河南烩面',icon:'noodle'},
+    {name:'湖南麻辣烫',icon:'malatang'},
+    {name:'螺蛳粉',icon:'noodle'},
+    {name:'沈阳抻面馆',icon:'noodle'}
   ];
   const iconPool = ['generic','noodle','pizza','hotpot','burger','milktea'];
   const screens = ['select','fly','draw','result'];
@@ -715,7 +720,7 @@
   function loadFoods(){
     let parsed = null;
     try {
-      parsed = JSON.parse(localStorage.getItem('cuteFoodDrawFoodsOptimized') || localStorage.getItem('cuteFoodDrawFoods') || 'null');
+      parsed = JSON.parse(localStorage.getItem('cuteFoodDrawFoodsV3') || 'null');
     } catch (_) {}
     if (!Array.isArray(parsed) || parsed.length < 2) parsed = baseFoods;
     const clean = parsed.slice(0,12).filter(item => item && typeof item.name === 'string' && item.name.trim()).map((item,index) => ({
@@ -728,7 +733,7 @@
 
   function saveFoods(){
     try {
-      localStorage.setItem('cuteFoodDrawFoodsOptimized',JSON.stringify(foods));
+      localStorage.setItem('cuteFoodDrawFoodsV3',JSON.stringify(foods));
       return true;
     } catch (_) {
       toast('浏览器未允许保存，但本次仍可使用');
