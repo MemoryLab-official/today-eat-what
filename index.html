@@ -432,9 +432,12 @@
   .result-icon{height:82px;display:grid;place-items:center}
   .result-icon svg{width:98px;height:75px}
   .result-name{
-    max-width:140px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;
-    font-family:var(--font-display);font-size:27px;font-weight:700;letter-spacing:.08em;
+    width:calc(100% - 12px);max-width:148px;
+    overflow:visible;white-space:nowrap;text-align:center;
+    font-family:var(--font-display);font-size:27px;font-weight:700;letter-spacing:.06em;
   }
+  .result-name.snug{font-size:21px;letter-spacing:.02em}
+  .result-name.compact{font-size:17px;letter-spacing:0}
   .mascot{
     position:absolute;z-index:9;right:2px;bottom:3px;
     width:99px;height:148px;object-fit:contain;
@@ -879,7 +882,9 @@
     later(() => {
       lines.classList.remove('show');
       box.classList.remove('shaking');
-      $('#resultName').textContent = result.name;
+      const resultName = $('#resultName');
+      resultName.textContent = result.name;
+      resultName.className = 'result-name' + (result.name.length >= 7 ? ' compact' : result.name.length >= 5 ? ' snug' : '');
       $('#resultIcon').innerHTML = iconSvgs[result.icon] || iconSvgs.generic;
       const slip = $('#resultSlip');
       slip.style.animation = 'none';
