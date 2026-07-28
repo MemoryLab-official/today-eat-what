@@ -7,6 +7,8 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
 <title>今天吃什么｜软萌盲盒抽奖</title>
+<link rel="preload" href="assets/app-background.webp" as="image" type="image/webp" fetchpriority="high">
+<link rel="preload" href="assets/lottery-box-closed.webp" as="image" type="image/webp" fetchpriority="high">
 <style>
   :root{
     --cream:#fffaf1;
@@ -66,7 +68,7 @@
   }
   .art-bg{
     position:absolute;inset:0;z-index:-3;
-    background:url("assets/app-background.png") center/cover no-repeat;
+    background:url("assets/app-background.webp") center/cover no-repeat;
   }
   .art-wash{
     position:absolute;inset:0;z-index:-2;pointer-events:none;
@@ -597,7 +599,7 @@
     <div class="hero">
       <div class="speech">抽个<br>幸运美食<br>吧～</div>
       <div class="box-stage">
-        <img class="box-art" src="assets/lottery-box-closed.png" alt="粉色小熊美食盲盒">
+        <img class="box-art" src="assets/lottery-box-closed.webp" width="1100" height="1100" decoding="async" fetchpriority="high" alt="粉色小熊美食盲盒">
       </div>
     </div>
     <div class="action-wrap"><button class="primary-btn" id="startBtn">开始抽奖</button></div>
@@ -613,7 +615,7 @@
       <div class="flying-area" id="flyingArea"></div>
       <div class="glow-ring"></div>
       <div class="box-stage">
-        <img class="box-art" src="assets/lottery-box-closed.png" alt="纸条从投入口飞入的小熊美食盲盒">
+        <img class="box-art" src="assets/lottery-box-closed.webp" width="1100" height="1100" decoding="async" loading="lazy" alt="纸条从投入口飞入的小熊美食盲盒">
       </div>
       <div class="status-pill" id="flyStatus">美食纸条正在飞入盲盒中</div>
     </div>
@@ -630,7 +632,7 @@
       <div class="motion-lines" id="motionLines"><i></i><i></i><i></i><i></i></div>
       <div class="box-stage">
         <div class="shake-target" id="shakeBox">
-          <img class="box-art" src="assets/lottery-box-closed.png" alt="等待摇动的小熊美食盲盒">
+          <img class="box-art" src="assets/lottery-box-closed.webp" width="1100" height="1100" decoding="async" loading="lazy" alt="等待摇动的小熊美食盲盒">
         </div>
       </div>
     </div>
@@ -648,13 +650,13 @@
     <div class="result-stage">
       <div class="rays" aria-hidden="true"></div>
       <div class="celebration" aria-hidden="true"><i>✦</i><i>★</i><i>✧</i></div>
-      <div class="result-box"><img class="box-art" src="assets/lottery-box-open.png" alt="打开的小熊美食盲盒"></div>
+      <div class="result-box"><img class="box-art" src="assets/lottery-box-open.webp" width="1100" height="1100" decoding="async" loading="lazy" alt="打开的小熊美食盲盒"></div>
       <div class="result-slip" id="resultSlip">
         <div class="result-icon" id="resultIcon"></div>
         <div class="result-name" id="resultName">披萨</div>
       </div>
       <div class="result-bubble">好吃到<br>起飞～</div>
-      <img class="mascot" src="assets/bear-mascot.png" alt="开心庆祝的小熊">
+      <img class="mascot" src="assets/bear-mascot.webp" width="480" height="720" decoding="async" loading="lazy" alt="开心庆祝的小熊">
     </div>
     <div class="result-actions">
       <button class="secondary-btn" id="againBtn">再抽一次</button>
